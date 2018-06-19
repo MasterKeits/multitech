@@ -14,6 +14,7 @@ class Contact(models.Model):
 	contact_phone = models.CharField(max_length=24, blank=True, null=True)
 	contact_email = models.CharField(max_length=50, blank=True, null=True)
 	contact_image = models.ImageField(upload_to="contact/images/", null=True, blank=True, editable=True)
+	created = models.DateTimeField(auto_now_add=True)
 
 	def save(self):
 		im = Image.open(self.contact_image)

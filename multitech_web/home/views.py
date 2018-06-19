@@ -21,4 +21,4 @@ class AutosView(generic.TemplateView):
 
 
 class ForkLiftView(generic.TemplateView):
-	template_name = 'home/autos.html'
+	template_name = 'home/forklift.html'

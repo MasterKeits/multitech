@@ -37,6 +37,8 @@
 					<div class="col-md-5 col-lg-4 col-sm-10 col-10  text-center shadowtext">
 						<img class="mx-auto rounded" src="{{ contact.contact_image.url }}" style="width:65%" /> {{ contact.contact_name }}<br /> {{ contact.contact_position }}<br /> {{ contact.contact_phone }}<br /> {{ contact.contact_email }}
 					</div>
+					{% else %}
+					No contacts
 					{% endif %} {% endfor %}
 				</div>
 			</div>

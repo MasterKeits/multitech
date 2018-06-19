@@ -21,6 +21,6 @@ urlpatterns = [
 	# path(r'', views.IndexView, name='index'),
 	path(r'', views.IndexView.as_view(), name='index'),
 	path('home/', include('home.urls')),
-	path('sales/', include('sales.urls')),
+	# path('sales/', include('sales.urls')),
 	path(r'admin/', admin.site.urls),
 ]
