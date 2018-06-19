@@ -1,0 +1,49 @@
+{% extends 'home/base.html' %} {% load staticfiles %} {% block style %} @media (max-width: 740px) { header { height: 1150px; } } {% endblock style %} {% block header %} {% block nav %}
+<div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+	<ul class="navbar-nav mr-auto">
+		<li class="nav-item">
+			<a class="nav-link" href="{% url 'home:autos' %}">Autod</a>
+		</li>
+		<li class="nav-item active">
+			<a class="nav-link" href="{% url 'home:forklift' %}">Tõstukid</a>
+			<span class="sr-only">(current)</span>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="{% url 'home:contact' %}">Kontakt</a>
+		</li>
+	</ul>
+</div>
+{% endblock nav %}
+<div class="mask rgba-gradient d-flex align-items-center">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-12 col-lg-9 col-sm-12 col-12 white-text">
+				<h4 class="h4-responsive text-center font-weight-bold wow fadeInLeft shadowtext" data-wow-delay="0.3s">
+					Tõstukite remont-hooldus
+				</h4>
+				<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
+				<p class="mb-3 wow fadeInRight text-left shadowtext" data-wow-delay="0.3s">
+					Laotõstukite müük, varuosad, remont ja hooldus üle Eesti. Varuosad kohapeal ja puuduvate varuosade tellimine 1-2 päeva. Varuosade kiire saatmine üle Eesti.
+				</p>
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-md-12 col-lg-4 col-sm-12 col-12 white-text">
+				<h4 class="h4-responsive font-weight-bold wow fadeInLeft text-center shadowtext" data-wow-delay="0.3s">
+					Varuosade müük
+				</h4>
+				<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
+				<p class="mb-3 wow fadeInRight text-left shadowtext" data-wow-delay="0.3s">
+					Balkancar  tõstukite varuosad kohapeal.
+					Teistele markidele (Perkins, Toyota, Yale, Mitsubishi, Yungheinrich,
+					Caterbillar, Nissan, Doosan, Linde, Still, TCM, HC, BT, Valmet) tellimisel.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock header %} {% block javascript %} {{ block.super }} {% endblock javascript %} {% block script %}
+<script>
+	new WOW().init();
+</script>
+{% endblock script %}

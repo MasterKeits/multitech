@@ -1,0 +1,50 @@
+{% extends 'home/base.html' %} {% block style %} @media (max-width: 740px) { header { height: 900px; } } {% endblock style %} {% block nav %}
+<div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+	<ul class="navbar-nav mr-auto">
+		<li class="nav-item">
+			<a class="nav-link" href="{% url 'home:autos' %}">Autod</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="{% url 'home:forklift' %}">Tõstukid</a>
+		</li>
+		<li class="nav-item active">
+			<a class="nav-link" href="{% url 'home:contact' %}">Kontakt</a>
+			<span class="sr-only">(current)</span>
+		</li>
+	</ul>
+</div>
+{% endblock nav %} {% block body %}
+<div class="mask rgba-gradient d-flex justify-content-center align-items-center">
+	<div class="container">
+		<h4 class="white-text text-center wow fadeInRight shadowtext" data-wow-delay="0.3s">
+			<i class="material-icons">phone_in_talk</i><span style="padding-left: 10px;">Kontakt</span>
+		</h4>
+		<h6 class=" text-center wow fadeInLeft shadowtext" data-wow-delay="0.3s">
+			<p>Multitech OÜ
+				<br/> taivo@multitech.ee
+				<br/>Reg.nr. 12523111
+				<br/>KMKR nr. EE101718424
+				<br/>IBAN EE182200221057998258, Swedbank
+				<br/>Ringtee 43, Tartu 50105
+			</p>
+
+		</h6>
+		<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
+		<div class="card wow fadeInRight" data-wow-delay="0.3s">
+			<div class="card-body">
+				<div class="row justify-content-center">
+					{% for contact in contact_list %} {% if contact.contact_name %}
+					<div class="col-md-5 col-lg-4 col-sm-10 col-10  text-center shadowtext">
+						<img class="mx-auto rounded" src="{{ contact.contact_image.url }}" style="width:65%" /> {{ contact.contact_name }}<br /> {{ contact.contact_position }}<br /> {{ contact.contact_phone }}<br /> {{ contact.contact_email }}
+					</div>
+					{% endif %} {% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock body %} {% block javascript %} {{ block.super }} {% endblock javascript %} {% block script %}
+<script>
+	new WOW().init();
+</script>
+{% endblock script %}
