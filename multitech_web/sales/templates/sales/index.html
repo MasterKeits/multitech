@@ -1,0 +1,46 @@
+{% extends 'home/base.html' %} {% block style %} @media (max-width: 740px) { header { height: 1900px; } } {% endblock style %} {% block nav %}
+<div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+	<ul class="navbar-nav mr-auto">
+		<li class="nav-item">
+			<a class="nav-link" href="{% url 'home:autos' %}">Autod</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="{% url 'home:forklift' %}">Tõstukid</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="{% url 'home:contact' %}">Kontakt</a>
+		</li>
+		<li class="nav-item active">
+			<a class="nav-link" href="{% url 'sales:index' %}">Müük
+				<span class="sr-only">(current)</span>
+			</a>
+		</li>
+	</ul>
+</div>
+{% endblock nav %} {% block body %}
+
+<div class="mask rgba-gradient d-flex justify-content-center align-items-center">
+	<div class="container">
+		<h4 class="white-text text-center wow fadeInRight" data-wow-delay="0.3s">Blogi</h4>
+		<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
+		<div class="card wow fadeInRight" data-wow-delay="0.3s">
+			<div class="card-body">
+				{% for i in category_list %}
+				{{ i.category }}
+				<a class="btn btn-outline-white wow fadeInRight" data-wow-delay="0.3s" href="{% url 'sales:subcat' i.id %}">
+					{{ i.name }}
+				</a>
+				<!-- <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s"> -->
+				{% endfor %}
+			</div>
+		</div>
+		<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s"> {% if page_obj.has_previous %}
+		<a class=" wow fadeInRight" data-wow-delay="0.3s" style="float: left; color: #ffffff;" href="?page={{ page_obj.previous_page_number }}">Eelmine</a> {% endif %} {% if page_obj.has_next %}
+		<a class=" wow fadeInLeft" data-wow-delay="0.3s" style="float: right; color: #ffffff;" href="?page={{ page_obj.next_page_number }}">Järgmine</a> {% endif %}
+	</div>
+</div>
+{% endblock body %} {% block javascript %} {{ block.super }} {% endblock javascript %} {% block script %}
+<script>
+	new WOW().init();
+</script>
+{% endblock script %}

@@ -13,11 +13,17 @@ class Category(models.Model):
 	name = models.CharField(max_length=50, blank=False, null=True)
 	created = models.DateTimeField(auto_now_add=True)
 
+	def __str__(self):
+			return self.name
+
 
 class SubCategory(models.Model):
 	name = models.CharField(max_length=50, blank=False, null=True)
 	category = models.ForeignKey(Category, on_delete=models.CASCADE)
 	created = models.DateTimeField(auto_now_add=True)
+
+	def __str__(self):
+			return self.name
 
 
 class Product(models.Model):
@@ -28,13 +34,14 @@ class Product(models.Model):
 	created = models.DateTimeField(auto_now_add=True)
 
 	def save(self):
-		im = Image.open(self.image)
-		output = BytesIO()
-		im = im.resize((800, 800))
-		im.save(output, format='JPEG', quality=100)
-		output.seek(0)
-		self.image = InMemoryUploadedFile(output, 'ImageField', "%s.jpg" % self.image.name.split('.')[0], 'image/jpeg', sys.getsizeof(output), None)
-		super(Product, self).save()
+		if self.image:
+			im = Image.open(self.image)
+			output = BytesIO()
+			im = im.resize((800, 800))
+			im.save(output, format='JPEG', quality=100)
+			output.seek(0)
+			self.image = InMemoryUploadedFile(output, 'ImageField', "%s.jpg" % self.image.name.split('.')[0], 'image/jpeg', sys.getsizeof(output), None)
+			super(Product, self).save()
 
 	def __str__(self):
 			return self.name
