@@ -21,13 +21,13 @@
 
 <div class="mask rgba-gradient d-flex justify-content-center align-items-center">
 	<div class="container">
-		<h4 class="white-text text-center wow fadeInRight" data-wow-delay="0.3s">Blogi</h4>
+		<h4 class="white-text text-center wow fadeInRight" data-wow-delay="0.3s">Müük</h4>
 		<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
 		<div class="card wow fadeInRight" data-wow-delay="0.3s">
 			<div class="card-body">
 				{% for i in category_list %}
-				{{ i.category }}
-				<a class="btn btn-outline-white wow fadeInRight" data-wow-delay="0.3s" href="{% url 'sales:subcat' i.id %}">
+				{{ i.subcategory_list }}
+				<a class="btn btn-outline-white wow fadeInRight" data-wow-delay="0.3s" href="{% url 'sales:detail' i.id %}">
 					{{ i.name }}
 				</a>
 				<!-- <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s"> -->

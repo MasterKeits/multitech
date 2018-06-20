@@ -12,15 +12,7 @@ import sys
 class Category(models.Model):
 	name = models.CharField(max_length=50, blank=False, null=True)
 	created = models.DateTimeField(auto_now_add=True)
-
-	def __str__(self):
-			return self.name
-
-
-class SubCategory(models.Model):
-	name = models.CharField(max_length=50, blank=False, null=True)
-	category = models.ForeignKey(Category, on_delete=models.CASCADE)
-	created = models.DateTimeField(auto_now_add=True)
+	parent_category = models.ForeignKey('self', null=True, blank=True, on_delete=models.CASCADE)
 
 	def __str__(self):
 			return self.name
@@ -30,7 +22,7 @@ class Product(models.Model):
 	name = models.CharField(max_length=50, blank=False, null=True)
 	content = RichTextField(null=True, blank=True, editable=True)
 	image = models.ImageField(upload_to="product/images/", null=True, blank=True, editable=True)
-	sub_category = models.ForeignKey(SubCategory, on_delete=models.CASCADE)
+	category = models.ForeignKey(Category, null=True, blank=True, on_delete=models.CASCADE)
 	created = models.DateTimeField(auto_now_add=True)
 
 	def save(self):

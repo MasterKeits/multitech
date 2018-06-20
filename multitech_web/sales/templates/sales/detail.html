@@ -2,32 +2,24 @@
 <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
 	<ul class="navbar-nav mr-auto">
 		<li class="nav-item">
-			<a class="nav-link" href="{% url 'home:index' %}">Esileht</a>
+			<a class="nav-link" href="{% url 'home:autos' %}">Autod</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="{% url 'products:index' %}">Tooted ja Teenused</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="{% url 'certs:index' %}">Sertifikaadid</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="{% url 'home:work' %}">Tule Tööle</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="{% url 'home:reference' %}">Referentsid</a>
-		</li>
-		<li class="nav-item active">
-			<a class="nav-link" href="{% url 'blog:index' %}"></a>
-			<span class="sr-only">(current)</span>
+			<a class="nav-link" href="{% url 'home:forklift' %}">Tõstukid</a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="{% url 'home:contact' %}">Kontakt</a>
+		</li>
+		<li class="nav-item active">
+			<a class="nav-link" href="{% url 'sales:index' %}">Müük
+				<span class="sr-only">(current)</span>
+			</a>
 		</li>
 	</ul>
 </div>
 {% endblock nav %} {% block body %}
 
-<div class="mask rgba-gradient d-flex justify-content-center align-items-center">
+<!-- <div class="mask rgba-gradient d-flex justify-content-center align-items-center">
 	<div class="container">
 		<h4 class="white-text text-center wow fadeInRight" data-wow-delay="0.3s">Blogi</h4>
 		<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
@@ -54,7 +46,7 @@
 		<a style="float: right; color: #ffffff;" href="{% url 'blog:detail' blogpost.get_next_by_created.id %}">{{ blogpost.get_next_by_created.title }}</a>
 		{% endif %}
 	</div>
-</div>
+</div> -->
 {% endblock body %} {% block javascript %} {{ block.super }} {% endblock javascript %} {% block script %}
 <script>
 	new WOW().init();
