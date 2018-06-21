@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.views import generic
-from .models import Category, Product
+from .models import Category, Product, SubCategory
 
 # Create your views here.
 

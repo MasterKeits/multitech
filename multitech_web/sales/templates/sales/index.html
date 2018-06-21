@@ -26,8 +26,11 @@
 		<div class="card wow fadeInRight" data-wow-delay="0.3s">
 			<div class="card-body">
 				{% for i in category_list %}
-				{{ i.subcategory_list }}
-				<a class="btn btn-outline-white wow fadeInRight" data-wow-delay="0.3s" href="{% url 'sales:detail' i.id %}">
+				{{ i.name }}
+				<!-- {{ i.sub_category }}
+				{{ i.sub_category.id }}
+				{{ i.sub_category.parent_category }} -->
+				<a class="btn btn-outline-white wow fadeInRight" data-wow-delay="0.3s" href="{% url 'sales:subcat' i.sub_category.id %}">
 					{{ i.name }}
 				</a>
 				<!-- <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s"> -->
