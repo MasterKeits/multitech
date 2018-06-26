@@ -19,27 +19,26 @@
 </div>
 {% endblock nav %} {% block body %}
 
-<div class="mask rgba-gradient d-flex justify-content-center align-items-center">
+<div class="mask rgba-gradient d-flex align-items-center">
 	<div class="container">
-		<h4 class="white-text text-center wow fadeInRight" data-wow-delay="0.3s">Müük</h4>
-		<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
-		<div class="card wow fadeInRight" data-wow-delay="0.3s">
-			<div class="card-body">
-				{% for i in category_list %}
-				{{ i.name }}
-				<!-- {{ i.sub_category }}
-				{{ i.sub_category.id }}
-				{{ i.sub_category.parent_category }} -->
-				<a class="btn btn-outline-white wow fadeInRight" data-wow-delay="0.3s">
-					{{ i.name }}
-				</a>
-				<!-- <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s"> -->
-				{% endfor %}
+		<div class="row justify-content-center">
+			<div class="col-md-10 col-lg-6 col-sm-12 col-12">
+				<h4 class="white-text text-center wow fadeInRight" data-wow-delay="0.3s">Müük</h4>
+				<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
+				<div class="card wow fadeInRight text-center" data-wow-delay="0.3s">
+					<div class="card-body">
+						{% for i in category_list %}
+						<a class="btn btn-outline-white wow fadeInLeft" data-wow-delay="0.3s" href="{% url 'sales:subcat' i.id %}">
+					{{i.name}}
+					</a>
+						{% endfor %}
+					</div>
+				</div>
+				<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s"> {% if page_obj.has_previous %}
+				<a class=" wow fadeInRight" data-wow-delay="0.3s" style="float: left; color: #ffffff;" href="?page={{ page_obj.previous_page_number }}">Eelmine</a> {% endif %} {% if page_obj.has_next %}
+				<a class=" wow fadeInLeft" data-wow-delay="0.3s" style="float: right; color: #ffffff;" href="?page={{ page_obj.next_page_number }}">Järgmine</a> {% endif %}
 			</div>
 		</div>
-		<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s"> {% if page_obj.has_previous %}
-		<a class=" wow fadeInRight" data-wow-delay="0.3s" style="float: left; color: #ffffff;" href="?page={{ page_obj.previous_page_number }}">Eelmine</a> {% endif %} {% if page_obj.has_next %}
-		<a class=" wow fadeInLeft" data-wow-delay="0.3s" style="float: right; color: #ffffff;" href="?page={{ page_obj.next_page_number }}">Järgmine</a> {% endif %}
 	</div>
 </div>
 {% endblock body %} {% block javascript %} {{ block.super }} {% endblock javascript %} {% block script %}

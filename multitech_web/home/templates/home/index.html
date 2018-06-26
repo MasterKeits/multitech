@@ -19,7 +19,7 @@
 <div class="mask rgba-gradient d-flex align-items-center">
 	<div class="container">
 		<div class="row justify-content-center">
-			<div class="col-md-6 col-xl-5 mb-4">
+			<div class="col-md-6 col-lg-6 col-sm-6 col-6<">
 				<div class="card wow fadeInLeft" data-wow-delay="0.3s">
 					<div class="card-body">
 						<div class="text-center">
@@ -27,18 +27,20 @@
 									<i class="material-icons">info_outline</i><span style="padding-left: 10px;">Kontakt</span>
 								</h3>
 						</div>
+						{% if contact_list %}
 						{% for contact in contact_list %} {% if contact.contact_name %}
 						<div class="col-md-5 col-lg-12 col-sm-10 col-10  text-center shadowtext">
 							<img class="mx-auto rounded" src="{{ contact.contact_image.url }}" style="width:65%" /> {{ contact.contact_name }}<br /> {{ contact.contact_position }}<br /> {{ contact.contact_phone }}<br /> {{ contact.contact_email }}
 						</div>
 						{% endif %} {% endfor %}
+						{% endif %}
 						<div class="text-center mt-4">
 							<input type="submit" class='btn btn-outline-white' value="Kontakteeru" onclick="window.location.href='mailto:info@mammutelement.ee'">
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-6 mb-5 mt-md-0 mt-5 white-text text-center text-md-left">
+			<div class="col-md-10 col-lg-6 col-sm-12 col-12 white-text">
 				<h1 class="h1-responsive font-weight-bold wow fadeInRight multilogo" data-wow-delay="0.3s">
 					Multitech
 				</h1>
@@ -67,11 +69,6 @@
 
 		</div>
 	</div>
-</div>
-</div>
-</div>
-</div>
-</div>
 </div>
 {% endblock body %} {% block javascript %} {{ block.super }} {% endblock javascript %} {% block script %}
 <script>

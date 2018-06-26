@@ -6,7 +6,7 @@ from .models import Category, Product, SubCategory
 # Create your views here.
 
 
-class CategoryView(generic.ListView):
+class CategoryListView(generic.ListView):
 	model = Category
 	paginate_by = 4
 	template_name = 'sales/index.html'
@@ -16,19 +16,18 @@ class CategoryView(generic.ListView):
 		return Category.objects.order_by('-created')
 
 
-# class SubCategoryView(generic.ListView):
-# 	model = SubCategory
-# 	paginate_by = 4
-# 	template_name = 'sales/subcat.html'
-# 	context_object_name = 'subcategory_list'
-#
-# 	def get_queryset(self):
-# 		return SubCategory.objects.order_by('-created')
+class CategoryDetailView(generic.DetailView):
+	model = Category
+	# paginate_by = 4
+	template_name = 'sales/subcat.html'
 
 
-class ProductView(generic.DetailView):
-	model = Product
+class SubCategoryDetailView(generic.DetailView):
+	model = SubCategory
 	template_name = 'sales/detail.html'
 
-# subcategories = Category.objects.filter(
-#     parent_category__id=target_category.id)
+
+class ProductDetailView(generic.DetailView):
+	model = Product
+	perse = "Sitavikat"
+	template_name = 'sales/product.html'
