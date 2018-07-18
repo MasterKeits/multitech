@@ -33,12 +33,12 @@
 
 		</h6>
 		<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
-		<div class="card wow fadeInRight" data-wow-delay="0.3s">
-			<div class="card-body">
 				<div class="row justify-content-center">
 					{% if contact_list %}
 					{% for contact in contact_list %}
 					<div class="col-md-5 col-lg-4 col-sm-10 col-10  text-center shadowtext">
+						<div class="card wow fadeInRight" data-wow-delay="0.3s">
+							<div class="card-body">
 						<img class="mx-auto rounded" src="{{ contact.contact_image.url }}" style="width:65%" /> {{ contact.contact_name }}<br /> {{ contact.contact_position }}<br /> {{ contact.contact_phone }}<br /> {{ contact.contact_email }}
 					</div>
 					{% endfor %}
