@@ -37,11 +37,11 @@
 			<div class="card-body">
 				<div class="row justify-content-center">
 					{% if contact_list %}
-					{% for contact in contact_list %} {% if contact.contact_name %}
+					{% for contact in contact_list %}
 					<div class="col-md-5 col-lg-4 col-sm-10 col-10  text-center shadowtext">
 						<img class="mx-auto rounded" src="{{ contact.contact_image.url }}" style="width:65%" /> {{ contact.contact_name }}<br /> {{ contact.contact_position }}<br /> {{ contact.contact_phone }}<br /> {{ contact.contact_email }}
 					</div>
-					{% endif %} {% endfor %}
+					{% endfor %}
 					{% else %}
 					No contacts
 					{% endif %}
