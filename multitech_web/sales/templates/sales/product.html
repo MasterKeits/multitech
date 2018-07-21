@@ -39,9 +39,7 @@
 				</div>
 			</div>
 			<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
-			<a class="wow fadeInLeft" data-wow-delay="0.3s" style="float: left; color: #ffffff;" href="{% url 'sales:subcat' subcategory.id %}">Tagasi</a> {% if page_obj.has_previous %}
-			<a class="wow fadeInRight" data-wow-delay="0.3s" style="float: left; color: #ffffff;" href="?page={{ page_obj.previous_page_number }}">Eelmine</a> {% endif %} {% if page_obj.has_next %}
-			<a class="wow fadeInLeft" data-wow-delay="0.3s" style="float: right; color: #ffffff;" href="?page={{ page_obj.next_page_number }}">Järgmine</a> {% endif %}
+			<a class="wow fadeInLeft tagasipadding" data-wow-delay="0.3s" style="float: left; color: #ffffff;" href="{% url 'sales:subcat' subcategory.id %}">Tagasi</a>
 		</div>
 	</div>
 </div>
