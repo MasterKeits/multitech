@@ -1,6 +1,5 @@
-{% extends 'home/base.html' %} {% load staticfiles %} {% block nav %}
-<div class="collapse navbar-collapse" id="navbarSupportedContent-7">
-	<ul class="navbar-nav mr-auto">
+{% extends 'home/base.html' %} {% load staticfiles %}
+{% block nav %}
 		<li class="nav-item">
 			<a class="nav-link" href="{% url 'home:autos' %}">Autod</a>
 		</li>
@@ -13,20 +12,18 @@
 		<li class="nav-item">
 			<a class="nav-link" href="{% url 'sales:index' %}">Müük</a>
 		</li>
-	</ul>
-</div>
-{% endblock nav %} {% block body %}
-<div class="mask rgba-gradient d-flex align-items-center">
-	<div class="container">
+{% endblock nav %}
+{% block content %}
+	<div class="container multipadding">
 		<div class="row justify-content-center">
-			<div class="col-md-6 col-lg-3 col-sm-6 col-6<">
-				<div class="card wow fadeInLeft" data-wow-delay="0.3s">
+			<div class="col-md-6 col-lg-3 col-sm-12 col-12">
+				<div class="card wow fadeInLeft multimargin" data-wow-delay="0.3s">
 					<div class="card-body">
 						<div class="text-center">
 							<h3 class="white-text">
 									<i class="material-icons">info_outline</i><span style="padding-left: 10px;">Kontakt</span>
 								</h3>
-								<h6 class=" text-center wow fadeInLeft shadowtext" data-wow-delay="0.3s">
+								<h6 class="text-center wow fadeInLeft shadowtext" data-wow-delay="0.3s">
 									<p>Multitech OÜ
 										<br/> taivo@multitech.ee
 										<br/>Ringtee 43, Tartu 50105
@@ -38,7 +35,12 @@
 						<div class="text-center mt-4">
 							<input type="submit" class='btn btn-outline-white' value="Kontakteeru" onclick="window.location.href='mailto:taivo@multitech.ee'">
 						</div>
-						<!-- <img class="mx-auto rounded" src="{% static 'home/images/bg.jpg' %}" style="width:20%" /> -->
+					</div>
+				</div>
+				<div class="card wow fadeInLeft" data-wow-delay="0.3s">
+					<div class="card-body">
+						<img class="mx-auto rounded" src="{% static 'home/images/DSC04227.jpg' %}" style="width:100%" />
+						<img class="mx-auto rounded" src="{% static 'home/images/t6stukid.jpg' %}" style="width:100%" />
 					</div>
 				</div>
 			</div>
@@ -71,8 +73,7 @@
 
 		</div>
 	</div>
-</div>
-{% endblock body %} {% block javascript %} {{ block.super }} {% endblock javascript %} {% block script %}
+{% endblock content %} {% block javascript %} {{ block.super }} {% endblock javascript %} {% block script %}
 <script>
 	new WOW().init();
 </script>

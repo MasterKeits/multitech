@@ -4,3 +4,4 @@ gunicorn
 django-ckeditor==5.3.1
 Wand
 Pillow
+django-bootstrap4

@@ -24,10 +24,9 @@ class CategoryDetailView(generic.DetailView):
 
 class SubCategoryDetailView(generic.DetailView):
 	model = SubCategory
-	template_name = 'sales/detail.html'
+	template_name = 'sales/product.html'
 
 
 class ProductDetailView(generic.DetailView):
 	model = Product
-	perse = "Sitavikat"
-	template_name = 'sales/product.html'
+	template_name = 'sales/detail.html'

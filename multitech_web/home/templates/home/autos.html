@@ -1,78 +1,83 @@
-{% extends 'home/base.html' %} {% load staticfiles %} {% block style %} @media (max-width: 740px) { header { height: 1150px; } } {% endblock style %} {% block header %} {% block nav %}
-<div class="collapse navbar-collapse" id="navbarSupportedContent-7">
-	<ul class="navbar-nav mr-auto">
-		<li class="nav-item active">
-			<a class="nav-link" href="{% url 'home:autos' %}">Autod</a>
-			<span class="sr-only">(current)</span>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="{% url 'home:forklift' %}">Tõstukid</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="{% url 'home:contact' %}">Kontakt</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="{% url 'sales:index' %}">Müük</a>
-		</li>
-	</ul>
-</div>
+{% extends 'home/base.html' %} {% load staticfiles %} {% block nav %}
+<li class="nav-item active">
+	<a class="nav-link" href="{% url 'home:autos' %}">Autod</a>
+	<span class="sr-only">(current)</span>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'home:forklift' %}">Tõstukid</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'home:contact' %}">Kontakt</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'sales:index' %}">Müük</a>
+</li>
 {% endblock nav %}
-<div class="mask rgba-gradient d-flex align-items-center">
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-md-12 col-lg-9 col-sm-12 col-12 white-text">
-				<h4 class="h4-responsive text-center font-weight-bold wow fadeInLeft shadowtext" data-wow-delay="0.3s">
-					Autode remont-hooldus
+{% block content %}
+<div class="container multipadding">
+	<div class="row justify-content-center">
+		<div class="col-md-12 col-lg-9 col-sm-12 col-12 white-text">
+			<h4 class="h4-responsive text-center font-weight-bold wow fadeInLeft shadowtext" data-wow-delay="0.3s">
+				Autode remont-hooldus
+			</h4>
+			<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
+			<p class="wow fadeInRight text-left shadowtext" data-wow-delay="0.3s">
+				Turvaline uksest ukseni teenindus. Tehnoülevaatuse täisteenindus. Sõiduautode ja pakibusside keretööd. Meie teenused sobivad nii eraisikutele kui ettevõtetele, kes hindavad oma aega ning pikaajalist usaldusväärset koostööd. Mugav ja kiire auto remont ja hooldus Tartus ja selle lähiümbruses. Turvaline uksest-ukseni teenindus. Garanteerime Teie autoga heaperemeheliku käitumise.
+			</p>
+		</div>
+	</div>
+	<div class="row justify-content-center">
+		<div class="col-md-12 col-lg-4 col-sm-12 col-12 white-text">
+			<h4 class="h4-responsive font-weight-bold wow fadeInLeft text-center shadowtext" data-wow-delay="0.3s">
+					Autode ja pakibusside keretööd
 				</h4>
-				<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
-				<p class="mb-3 wow fadeInRight text-left shadowtext" data-wow-delay="0.3s">
-					Turvaline uksest ukseni teenindus. Tehnoülevaatuse täisteenindus. Sõiduautode ja pakibusside keretööd. Meie teenused sobivad nii eraisikutele kui ettevõtetele, kes hindavad oma aega ning pikaajalist usaldusväärset koostööd. Mugav ja kiire auto remont ja hooldus Tartus ja selle lähiümbruses. Turvaline uksest-ukseni teenindus. Garanteerime Teie autoga heaperemeheliku käitumise.
-				</p>
-			</div>
+			<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
+			<p class="mb-3 wow fadeInRight text-left shadowtext" data-wow-delay="0.3s">
+				Meil on olemas piisavalt suured ruumid, et teha hooldus- ning keretöid nii autodele kui ka pakibussidele.
+			</p>
+		</div>
+		<div class="col-md-12 col-lg-4 col-sm-12 col-12 white-text">
+			<h4 class="h4-responsive font-weight-bold wow fadeInLeft text-center shadowtext" data-wow-delay="0.3s">
+				Haakekonksude müük ja paigaldus
+			</h4>
+			<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
+			<p class="mb-3 wow fadeInRight text-left shadowtext" data-wow-delay="0.3s">
+				Saadaval lai valik haakekonkse nii sõiduautodele kui pakibussidele.
+			</p>
+		</div>
+	</div>
+	<div class="row justify-content-center">
+		<div class="col-md-12 col-lg-4 col-sm-12 col-12 white-text">
+			<h4 class="h4-responsive font-weight-bold wow fadeInLeft text-center shadowtext" data-wow-delay="0.3s">
+				Varuosade müük
+			</h4>
+			<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
+			<p class="mb-3 wow fadeInRight text-left shadowtext" data-wow-delay="0.3s">
+				Vajadusel leiame sobivad puuduolevad osad Teie autole.
+			</p>
+		</div>
+		<div class="col-md-12 col-lg-4 col-sm-12 col-12 white-text">
+			<h4 class="h4-responsive font-weight-bold wow fadeInLeft text-center shadowtext" data-wow-delay="0.3s">
+				Tehnoülevaatuse täisteenindus
+			</h4>
+			<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
+			<p class="mb-3 wow fadeInRight text-left shadowtext" data-wow-delay="0.3s">
+				Parandame auto turvaliseks – nii, et teedel oleks ohutu liigelda. Teeme Teie eest ka ülevaatuse.
+			</p>
 		</div>
 		<div class="row justify-content-center">
-			<div class="col-md-12 col-lg-4 col-sm-12 col-12 white-text">
-				<h4 class="h4-responsive font-weight-bold wow fadeInLeft text-center shadowtext" data-wow-delay="0.3s">
-						Autode ja pakibusside keretööd
-					</h4>
-				<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
-				<p class="mb-3 wow fadeInRight text-left shadowtext" data-wow-delay="0.3s">
-					Meil on olemas piisavalt suured ruumid, et teha hooldus- ning keretöid nii autodele kui ka pakibussidele.
-				</p>
-			</div>
-			<div class="col-md-12 col-lg-4 col-sm-12 col-12 white-text">
-				<h4 class="h4-responsive font-weight-bold wow fadeInLeft text-center shadowtext" data-wow-delay="0.3s">
-					Haakekonksude müük ja paigaldus
-				</h4>
-				<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
-				<p class="mb-3 wow fadeInRight text-left shadowtext" data-wow-delay="0.3s">
-					Saadaval lai valik haakekonkse nii sõiduautodele kui pakibussidele.
-				</p>
-			</div>
-		</div>
-		<div class="row justify-content-center">
-			<div class="col-md-12 col-lg-4 col-sm-12 col-12 white-text">
-				<h4 class="h4-responsive font-weight-bold wow fadeInLeft text-center shadowtext" data-wow-delay="0.3s">
-					Varuosade müük
-				</h4>
-				<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
-				<p class="mb-3 wow fadeInRight text-left shadowtext" data-wow-delay="0.3s">
-					Vajadusel leiame sobivad puuduolevad osad Teie autole.
-				</p>
-			</div>
-			<div class="col-md-12 col-lg-4 col-sm-12 col-12 white-text">
-				<h4 class="h4-responsive font-weight-bold wow fadeInLeft text-center shadowtext" data-wow-delay="0.3s">
-					Tehnoülevaatuse täisteenindus
-				</h4>
-				<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
-				<p class="mb-3 wow fadeInRight text-left shadowtext" data-wow-delay="0.3s">
-					Parandame auto turvaliseks – nii, et teedel oleks ohutu liigelda. Teeme Teie eest ka ülevaatuse.
-				</p>
+		<div class="col-md-8 col-lg-8 col-sm-12 col-12 white-text">
+		<div class="card wow fadeInLeft" data-wow-delay="0.3s">
+			<div class="card-body">
+				<img class="mx-auto rounded" src="{% static 'home/images/auto.jpg' %}" style="width:100%" />
 			</div>
 		</div>
 	</div>
+	</div>
+	</div>
 </div>
-{% endblock header %} {% block javascript %} {{ block.super }} {% endblock javascript %} {% block script %}
+{% endblock content %}
+{% block script %}
 <script>
 	new WOW().init();
 </script>

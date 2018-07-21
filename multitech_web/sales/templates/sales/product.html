@@ -1,52 +1,51 @@
-{% extends 'home/base.html' %} {% block style %} @media (max-width: 740px) { header { height: 1300px; } } {% endblock style %} {% block nav %}
-<div class="collapse navbar-collapse" id="navbarSupportedContent-7">
-	<ul class="navbar-nav mr-auto">
-		<li class="nav-item">
-			<a class="nav-link" href="{% url 'home:autos' %}">Autod</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="{% url 'home:forklift' %}">Tõstukid</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="{% url 'home:contact' %}">Kontakt</a>
-		</li>
-		<li class="nav-item active">
-			<a class="nav-link" href="{% url 'sales:index' %}">Müük
-				<span class="sr-only">(current)</span>
-			</a>
-		</li>
-	</ul>
-</div>
-{% endblock nav %} {% block body %}
-<div class="mask rgba-gradient d-flex justify-content-center align-items-center">
-	<div class="container">
-		<h4 class="white-text text-center wow fadeInRight" data-wow-delay="0.3s">{{ product }}</h4>
-		<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
-		<div class="card wow fadeInRight" data-wow-delay="0.3s">
-			<div class="card-body">
-				<div class="row justify-content-center" style="padding-bottom:30px;">
-					{% if product.image %}
-					<div class="col-md-5 col-lg-3 col-sm-12 col-12 text-center shadowtext">
-						<img class="mx-auto rounded" src="{{ product.image.url }}" style="width:100%" />
+{% extends 'home/base.html' %} {% block nav %}
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'home:autos' %}">Autod</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'home:forklift' %}">Tõstukid</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'home:contact' %}">Kontakt</a>
+</li>
+<li class="nav-item active">
+	<a class="nav-link" href="{% url 'sales:index' %}">Müük
+		<span class="sr-only">(current)</span>
+	</a>
+</li>
+{% endblock nav %} {% block content %}
+<div class="container multipadding">
+	<div class="row justify-content-center">
+		<div class="col-md-8 col-lg-8 col-sm-12 col-12 shadowtext">
+			<h4 class="white-text text-center wow fadeInRight" data-wow-delay="0.3s">{{ subcategory }}</h4>
+			<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
+			<div class="card wow fadeInRight" data-wow-delay="0.3s">
+				<div class="card-body">
+					{% if subcategory.product_set.all %}
+					{% for entry in subcategory.product_set.all %}
+					<div class="row justify-content-center salespadding" style="font-size:small;">
+						{% if entry.image %}
+						<div class="col-md-4 col-lg-4 col-sm-12 col-12 text-center shadowtext">
+							<img class="mx-auto rounded" src="{{ entry.image.url }}" style="width:100%" />
+						</div>
+						{% endif %}
+						<div class="col-md-8 col-lg-8 col-sm-12 col-12 shadowtext">
+							<h4>{{ entry.name }}</h4> {{ entry.content|safe|truncatewords:"50"|linebreaks }}
+							<a class="text-secondary" href="{% url 'sales:detail' entry.id %}">
+						<a style="color: #ffffff;" href="{% url 'sales:detail' entry.id %}">Loe edasi</a>
+						</div>
 					</div>
-					{% endif %}
-					<div class="col-md-5 col-lg-8 col-sm-12 col-12 shadowtext work">
-						{{ product.content|safe }}
-					</div>
+					{% endfor %} {% endif %}
 				</div>
-				<!-- <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s"> -->
 			</div>
+			<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
+			<a class="wow fadeInLeft" data-wow-delay="0.3s" style="float: left; color: #ffffff;" href="{% url 'sales:subcat' subcategory.id %}">Tagasi</a> {% if page_obj.has_previous %}
+			<a class="wow fadeInRight" data-wow-delay="0.3s" style="float: left; color: #ffffff;" href="?page={{ page_obj.previous_page_number }}">Eelmine</a> {% endif %} {% if page_obj.has_next %}
+			<a class="wow fadeInLeft" data-wow-delay="0.3s" style="float: right; color: #ffffff;" href="?page={{ page_obj.next_page_number }}">Järgmine</a> {% endif %}
 		</div>
-		<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
-		{% if product.get_previous_by_created %}
-		<a style="float: left; color: #ffffff;" href="{% url 'sales:product' product.get_previous_by_created.id %}">{{ product.get_previous_by_created.title }}</a>
-		{% endif %}
-		{% if product.get_next_by_created %}
-		<a style="float: right; color: #ffffff;" href="{% url 'sales:product' product.get_next_by_created.id %}">{{ product.get_next_by_created.name }}</a>
-		{% endif %}
 	</div>
 </div>
-{% endblock body %} {% block javascript %} {{ block.super }} {% endblock javascript %} {% block script %}
+{% endblock content %} {% block script %}
 <script>
 	new WOW().init();
 </script>

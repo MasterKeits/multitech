@@ -1,52 +1,20 @@
-html,
-body,
-header,
+/* html {
+	height: 100% ;
+}
+
+/* body {
+	padding-top: 3rem;
+} */
+
 .view {
-	height: 100%;
+	min-height: 100%;
 	font-family: 'Lato';
 }
 
-.salespadding {
-	padding-top: 10px;
-}
-
-
-.padding {
-	padding-top: 65px;
-}
-
-@media (max-width: 740px) {
-	header {
-		height: 1000px;
-	}
-}
-
-.top-nav-collapse {
-	background-color: #a3a1a1 !important;
-}
-
-.navbar:not(.top-nav-collapse) {
-	background: transparent !important;
-}
-
-@media (max-width: 768px) {
-	.navbar:not(.top-nav-collapse) {
-		background: #888686 !important;
-	}
-}
-
-.rgba-gradient {
-	background: -webkit-linear-gradient(75deg, rgba(0, 0, 0, 0.7), rgba(97, 104, 109, 1.0) 100%);
-	background: -webkit-gradient(linear, 75deg, from(rgba(0, 0, 0, 0.7), rgba(190, 21, 33, 0.6) 100%)));
-	background: linear-gradient(to 75deg, rgba(0, 0, 0, 0.7), rgba(190, 21, 33, 0.6) 100%);
-}
-
-.card {
-	background-color: rgba(136, 134, 134, 0.4);
-}
-
-.md-form label {
-	color: #ffffff;
+div .multilogonav {
+	font-family: 'Righteous';
+	font-size: 28px;
+	padding-left: 50px;
 }
 
 .shadowtext {
@@ -55,27 +23,34 @@ header,
 }
 
 
-	{
-	% block style %
+.card {
+	background-color: rgba(136, 134, 134, 0.4);
 }
 
-	{
-	% endblock style %
-}
-div.cert {
-	font-size: 13px;
+.multipadding {
+	padding-top: 150px;
 }
 
-div.work {
-	font-size: 15px;
+.multimargin {
+	margin-bottom: 5px;
 }
 
-div .multilogo {
-	font-family: 'Righteous';
-
+.salespadding {
+	padding-bottom: 10px;
 }
 
-div .multilogonav {
-	font-family: 'Righteous';
-	font-size: 28px;
+.navbar:not(.top-nav-collapse) {
+	background: transparent !important;
+}
+
+@media (max-width: 768px) {
+	.navbar:not(.top-nav-collapse) {
+		background: #1c3d72 !important;
+	}
+}
+
+.rgba-gradient {
+	background: -webkit-linear-gradient(75deg, rgba(0, 0, 0, 0.7), rgba(97, 104, 109, 0.6) 100%);
+	background: -webkit-gradient(linear, 75deg, from(rgba(0, 0, 0, 0.7), rgba(190, 21, 33, 0.6) 100%));
+	background: linear-gradient(to 75deg, rgba(0, 0, 0, 0.7), rgba(190, 21, 33, 0.6) 100%);
 }
