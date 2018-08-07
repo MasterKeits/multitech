@@ -7,14 +7,14 @@
 			<a class="nav-link" href="{% url 'home:forklift' %}">Tõstukid</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="{% url 'home:contact' %}">Kontakt</a>
+			<a class="nav-link" href="{% url 'sales:index' %}">Müük</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="{% url 'sales:index' %}">Müük</a>
+			<a class="nav-link" href="{% url 'home:contact' %}">Kontakt</a>
 		</li>
 {% endblock nav %}
 {% block content %}
-	<div class="container multipadding">
+	<div class="container tagasipadding bannerpadding">
 		<div class="row justify-content-center">
 			<div class="col-md-6 col-lg-3 col-sm-12 col-12">
 				<div class="card wow fadeInLeft multimargin" data-wow-delay="0.3s">
@@ -31,7 +31,7 @@
 
 								</h6>
 						</div>
-						<div class="text-center mt-4">
+						<div class="text-center">
 							<input type="submit" class='btn btn-outline-white' value="Kontakteeru" onclick="window.location.href='mailto:taivo@multitech.ee'">
 						</div>
 					</div>
@@ -52,7 +52,8 @@
 					Laotõstukid:
 				</h5>
 				<p class="wow fadeInRight shadowtext frontext" data-wow-delay="0.3s">
-					Laotõstukite müük, varuosad, remont ja hooldus üle Eesti. Varuosad kohapeal ja puuduvate varuosade tellimine 1-2 päeva. Varuosade kiire saatmine üle Eesti.
+					Tõstukite remont-hooldus
+Laotõstukite müük, varuosad, remont ja hooldus üle Eesti. Varuosad kohapeal ja puuduvate varuosade tellimine 1-2 päeva. Varuosade kiire saatmine üle Eesti.
 				</p>
 				<a class="btn btn-outline-white wow fadeInRight" data-wow-delay="0.3s" href="{% url 'home:forklift' %}">
 					Lähemalt
@@ -62,7 +63,7 @@
 					Autod:
 				</h5>
 				<p class="wow fadeInRight shadowtext" data-wow-delay="0.3s">
-					Turvaline uksest ukseni teenindus. Tehnoülevaatuse täisteenindus. Sõiduautode ja pakibusside keretööd. Meie teenused sobivad nii eraisikutele kui ettevõtetele, kes hindavad oma aega ning pikaajalist usaldusväärset koostööd.
+					Tehnoülevaatuse täisteenindus. Sõiduautode ja pakibusside keretööd. Mugav ja kiire auto remont ja hooldus Tartus ja selle lähiümbruses. Turvaline uksest-ukseni teenindus.
 				</p>
 				<a class="btn btn-outline-white wow fadeInRight" data-wow-delay="0.3s" href="{% url 'home:autos' %}">
 					Lähemalt

@@ -1,17 +1,17 @@
-{% extends 'home/base.html' %} {% load staticfiles %} {% block style %}  {% endblock style %} {% block nav %}
-		<li class="nav-item">
-			<a class="nav-link" href="{% url 'home:autos' %}">Autod</a>
-		</li>
-		<li class="nav-item active">
-			<a class="nav-link" href="{% url 'home:forklift' %}">Tõstukid</a>
-			<span class="sr-only">(current)</span>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="{% url 'home:contact' %}">Kontakt</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="{% url 'sales:index' %}">Müük</a>
-		</li>
+{% extends 'home/base.html' %} {% load staticfiles %} {% block style %} {% endblock style %} {% block nav %}
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'home:autos' %}">Autod</a>
+</li>
+<li class="nav-item active">
+	<a class="nav-link" href="{% url 'home:forklift' %}">Tõstukid</a>
+	<span class="sr-only">(current)</span>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'home:contact' %}">Kontakt</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'sales:index' %}">Müük</a>
+</li>
 {% endblock nav %} {% block content %}
 <div class="container multipadding">
 	<div class="row justify-content-center">
@@ -21,7 +21,7 @@
 			</h4>
 			<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
 			<p class="mb-3 wow fadeInRight text-left shadowtext" data-wow-delay="0.3s">
-				Laotõstukite müük, varuosad, remont ja hooldus üle Eesti. Varuosad kohapeal ja puuduvate varuosade tellimine 1-2 päeva. Varuosade kiire saatmine üle Eesti.
+				Tõstukite müük, remont ja hooldus üle Eesti. Laotõstukite müük, varuosad, remont ja hooldus üle Eesti. Varuosad kohapeal ja puuduvate varuosade tellimine 1-2 päeva. Varuosade kiire saatmine üle Eesti.
 			</p>
 		</div>
 	</div>
@@ -32,26 +32,25 @@
 			</h4>
 			<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
 			<p class="mb-3 wow fadeInRight text-left shadowtext" data-wow-delay="0.3s">
-				Balkancar  tõstukite varuosad kohapeal.
-				Teistele markidele (Perkins, Toyota, Yale, Mitsubishi, Yungheinrich,
-				Caterbillar, Nissan, Doosan, Linde, Still, TCM, HC, BT, Valmet) tellimisel.
+				Balkancar tõstukite varuosad kohapeal. Puuduvate varuosade tellimine 1-2 tööpäeva. Teiste markide (Perkins, Toyota, Yale, Mitsubishi, Yungheinrich, Caterbillar, Nissan, Doosan, Linde, Still, TCM, HC, BT, Valmet) varuosad tellimisel. Varuosade kiire saatmine
+				üle Eesti.
 			</p>
 			<div class="card wow fadeInLeft" data-wow-delay="0.3s">
-			<div class="card-body">
-			<div class="row justify-content-center">
-				<div class="col-md-12 col-lg-6 col-sm-12 col-12 white-text">
-					<img class="mx-auto rounded" src="{% static 'home/images/IMG_0057.jpg' %}" style="width:100%" />
-				</div>
-				<div class="col-md-12 col-lg-6 col-sm-12 col-12 white-text">
-					<img class="mx-auto rounded" src="{% static 'home/images/photo.jpg' %}" style="width:100%" />
-				</div>
-				</div>
+				<div class="card-body">
+					<div class="row justify-content-center">
+						<div class="col-md-12 col-lg-6 col-sm-12 col-12 white-text">
+							<img class="mx-auto rounded" src="{% static 'home/images/IMG_0057.jpg' %}" style="width:100%" />
+						</div>
+						<div class="col-md-12 col-lg-6 col-sm-12 col-12 white-text">
+							<img class="mx-auto rounded" src="{% static 'home/images/photo.jpg' %}" style="width:100%" />
+						</div>
+					</div>
 
-			</div>
-			</div>
+				</div>
 			</div>
 		</div>
 	</div>
+</div>
 </div>
 {% endblock content %} {% block javascript %} {{ block.super }} {% endblock javascript %} {% block script %}
 <script>

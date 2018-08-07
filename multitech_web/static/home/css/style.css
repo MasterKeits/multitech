@@ -43,8 +43,16 @@ div .multilogonav {
 	padding-bottom: 20px;
 }
 
+.bannerpadding {
+	padding-top: 20px;
+}
+
 .navbar:not(.top-nav-collapse) {
 	background: transparent !important;
+}
+
+.navtextcolor {
+	color: #a01e1e;
 }
 
 @media (max-width: 768px) {

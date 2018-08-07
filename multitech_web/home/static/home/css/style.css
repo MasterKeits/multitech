@@ -43,9 +43,14 @@ div .multilogonav {
 	padding-bottom: 20px;
 }
 
+.bannerpadding {
+	padding-top: 20px;
+}
+
 .navbar:not(.top-nav-collapse) {
 	background: transparent !important;
 }
+
 
 @media (max-width: 768px) {
 	.navbar:not(.top-nav-collapse) {
