@@ -19,7 +19,7 @@
 		<div class="col-md-10 col-lg-8 col-sm-12 col-12 white-text text-center text-md-left">
 			<div class="row justify-content-center salespadding">
 				{% if contact_list %} {% for contact in contact_list %} {% if contact.contact_name %}
-				<div class="col-md-5 col-lg-4 col-sm-10 col-10  text-center shadowtext tagasipadding">
+				<div class="col-md-5 col-lg-4 col-sm-10 col-10  text-center shadowtext contactpadding">
 					<div class="card wow fadeInRight" data-wow-delay="0.3s">
 						<div class="card-body">
 							<img class="mx-auto rounded" src="{{ contact.contact_image.url }}" style="width:100%" /> {{ contact.contact_name }}<br > {{ contact.contact_position }}<br /> {{ contact.contact_phone }}<br /> {{ contact.contact_email }}
@@ -29,13 +29,13 @@
 				{% endif %} {% endfor %} {% endif %}
 			</div>
 			<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
-			<div class="contactpadding">
+			<div>
 			<h4 class="white-text text-center wow fadeInRight shadowtext" data-wow-delay="0.3s">
 			<i class="material-icons">phone_in_talk</i><span style="padding-left: 10px;">Contact</span>
 		</h4>
 			<h6 class=" text-center wow fadeInLeft shadowtext" data-wow-delay="0.3s">
 			<p class="copyright">&copy;
-				Multitech OÜ 
+				Multitech OÜ
 				<br/> taivo@multitech.ee
 				<br/>Reg.nr. 12523111
 				<br/>KMKR nr. EE101718424
