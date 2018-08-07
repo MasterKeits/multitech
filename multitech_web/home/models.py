@@ -20,7 +20,7 @@ class Contact(models.Model):
 		if self.contact_image:
 			im = Image.open(self.contact_image)
 			output = BytesIO()
-			im = im.resize((800, 800))
+			im = im.resize((600, 800))
 			im.save(output, format='JPEG', quality=100)
 			output.seek(0)
 			self.contact_image = InMemoryUploadedFile(output, 'ImageField', "%s.jpg" % self.contact_image.name.split('.')[0], 'contact_image/jpeg', sys.getsizeof(output), None)
