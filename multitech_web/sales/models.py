@@ -37,7 +37,7 @@ class Product(models.Model):
 		if self.image:
 			im = Image.open(self.image)
 			output = BytesIO()
-			im = im.resize((800, 800))
+			im = im.resize((800, 600))
 			im.save(output, format='JPEG', quality=100)
 			output.seek(0)
 			self.image = InMemoryUploadedFile(output, 'ImageField', "%s.jpg" % self.image.name.split('.')[0], 'image/jpeg', sys.getsizeof(output), None)

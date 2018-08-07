@@ -14,8 +14,8 @@
 	</a>
 </li>
 {% endblock nav %} {% block content %}
-<div class="container bannerpadding">
-	<div class="row justify-content-center">
+<div class="container bannermargin">
+	<div class="row justify-content-center autosmargin">
 		<div class="col-md-8 col-lg-8 col-sm-12 col-12 shadowtext">
 			<h4 class="white-text text-center wow fadeInRight" data-wow-delay="0.3s">{{ subcategory }}</h4>
 			<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
@@ -23,7 +23,7 @@
 				<div class="card-body">
 					{% if subcategory.product_set.all %}
 					{% for entry in subcategory.product_set.all %}
-					<div class="row justify-content-center salespadding" style="font-size:small;">
+					<div class="row justify-content-center salesmargin" style="font-size:small;">
 						{% if entry.image %}
 						<div class="col-md-4 col-lg-4 col-sm-12 col-12 text-center shadowtext">
 							<img class="mx-auto rounded" src="{{ entry.image.url }}" style="width:100%" />
@@ -39,7 +39,7 @@
 				</div>
 			</div>
 			<hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
-			<a class="wow fadeInLeft tagasipadding" data-wow-delay="0.3s" style="float: left; color: #ffffff;" href="{% url 'sales:subcat' subcategory.id %}">Tagasi</a>
+			<a class="wow fadeInLeft tagasimargin" data-wow-delay="0.3s" style="float: left; color: #ffffff;" href="{% url 'sales:subcat' subcategory.id %}">Tagasi</a>
 		</div>
 	</div>
 </div>

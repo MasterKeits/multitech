@@ -1,10 +1,11 @@
 /* html {
-	height: 100% ;
-}
-
-/* body {
-	padding-top: 3rem;
+	min-height: 100%;
 } */
+
+body {
+	/* margin-top: 3rem; */
+	height: 100%;
+}
 
 .view {
 	min-height: 100%;
@@ -14,7 +15,7 @@
 div .multilogonav {
 	font-family: 'Righteous';
 	font-size: 28px;
-	padding-left: 50px;
+	margin-left: 50px;
 }
 
 .shadowtext {
@@ -27,38 +28,52 @@ div .multilogonav {
 	background-color: rgba(136, 134, 134, 0.4);
 }
 
-.multipadding {
-	padding-top: 150px;
+.multimargin {
+	margin-top: 150px;
 }
 
 .multimargin {
 	margin-bottom: 5px;
 }
 
-.salespadding {
-	padding-bottom: 10px;
+.salesmargin {
+	margin-bottom: 10px;
 }
 
-.contactpadding {
-	padding-bottom: 5px;
+.contactmargin {
+	margin-bottom: 5px;
 }
 
-.tagasipadding {
-	padding-bottom: 20px;
+.homemargin {
+	margin-top: 10px;
 }
 
-.bannerpadding {
-	padding-top: 20px;
+.autosmargin {
+	margin-top: 30px;
+}
+
+.tagasimargin {
+	margin-bottom: 20px;
 }
 
 .navbar:not(.top-nav-collapse) {
 	background: transparent !important;
 }
 
+.nav-link {
+	color: white !important;
+	/* font-weight: bold; */
+	font-size: 18px;
+	text-shadow: 1px 2px 4px #000000;
+}
+
 
 @media (max-width: 768px) {
 	.navbar:not(.top-nav-collapse) {
-		background: #1c3d72 !important;
+		background: #888686 !important;
+	}
+	.mobbannermargin {
+		margin-top: 65px;
 	}
 }
 
